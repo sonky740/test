@@ -1,0 +1,137 @@
+@charset "utf-8";
+
+/* layout */
+.snb{position:absolute;top:0;left:0;width:205px}
+.snb header{padding:30px 0 30px 20px;text-align:left;background:#f13d40;}
+.snb h2{margin-top:50px;padding-bottom:10px;font-weight:300;color:#fff;font-size:20px;}
+.snb h2 strong{font-weight:300;color:#16fff7;display:inline-block;border-bottom:1px solid #16fff7}
+.snb .ico_com{margin-right:6px;margin-top:-3px;}
+.snb li .menuRow{border-top:0;color:#333;font-size:16px;padding:26px 0 24px 20px;display:block;border-bottom:1px solid #fff;}
+.snb > ul > li.selected{background:#1e2c3a}
+.snb > ul > li.selected > a{font-weight:bold;color:#fff}
+.snb > ul > li.selected a.active{background:url("../images/snb_ico_arr.gif") no-repeat 100% 11px;font-weight:bold;color:#fff}
+.snb .loginfo{padding-bottom:14px;font-family:dotum;font-size:11px;color:#eebdbd}
+.snb .loginfo strong{color:#fff}
+.subMenu a{color:#666;font-size:14px;padding:14px 0 14px 20px;display:block}
+.snb .subMenu.selected{background:#fff;color:#f13d40;border-left:4px solid #f13d40;text-indent:-4px;}
+.snb .subMenu.selected a{color:#f13d40;}
+
+.inner{padding:40px}
+.inner_dialog{padding-top:0px; padding-left:20px; padding-right:20px; padding-bottom:20px;}
+.log_set:after{display:block;clear:both;content:''}
+.log_set{padding:15px 24px 11px 24px}
+.log_set, .log_set a{color:#9c9ea3}
+.log_set .ico_bell{margin-right:8px}
+.log_set .user{float:left}
+.log_set ul.bt{float:right}
+.log_set ul.bt .ico_arr{margin-left:6px}
+.log_set ul.bt .ico_arr2{margin-right:5px}
+.log_set ul.bt li{float:left}
+.log_set ul.bt .btn_log{margin-top:-6px;margin-left:30px}
+.log_set ul.bt .btn_log a{display:inline-block;padding:0 8px;border:1px solid #b8bdc6;-webkit-border-radius:2px;border-radius:2px;line-height:21px;font-size:14px}
+.path{position:relative;padding-bottom:8px;border-bottom:2px solid #333;color:#333;font-size:18px;margin-bottom:20px;}
+.path .ico_msc{margin:-4px 13px 0 0}
+.path .ico_watch{margin:-2px 6px 0 0}
+.path strong, .path em{font-size:14px}
+.path i{display:inline-block;vertical-align:middle;width:5px;height:9px;margin:-2px 17px 0 19px;background-image:url("../images/ico_com.png");background-position:-177px 0}
+.path strong{color:#213141}
+.path em{font-weight:bold;color:#7e8e9f}
+.path .time{position:absolute;top:34px;right:40px;color:#9c9ea3}
+#container{position: relative !important;min-width:960px;min-height:568px;margin-left:205px}
+#content{padding:40px 40px 32px 40px;}
+#footer{bottom: 0;left: 0;padding: 10px 20px;position: absolute;right:0;z-index:110;text-align:center;}
+#footer img{vertical-align:middle}
+#footer .btn_top{position:absolute;top:-24px;right:40px}
+.pace-done #container,
+.pace-done #footer{-webkit-transition: all 0.4s;-moz-transition: all 0.4s;-o-transition: all 0.4s;transition: all 0.4s}
+
+/* content */
+body.login{background:url("../images/bg_login.png") repeat;}
+.login_bg{position:fixed;top:0;left:0;width:100%;height:100%}
+.login_bg img{position: absolute;top:0;left:0;min-height:50%;margin:0 auto;}
+.login_bar{position:absolute;top:0;left:0;width:100%;height:10px;background:#f05050}
+.login_footer{position:absolute;bottom:0;left:0;width:100%;height:33px;padding-top:24px;text-align:center}
+.login_ct{position:absolute;top:50%;right:150px;width:424px;margin:-195px 0 0 -194px}
+.login_ct h1{text-align:left;position:relative;}
+.login_ct h1 .sub_txt{font-size:18px;color:#333;position:absolute;bottom:0;right:0;}
+/* .login_form{margin-top:35px} */ /* 기존  */ 
+.login_form{margin-top:15px;background:#eee;padding:20px;} /* 20180207 수정  */
+.login_form li{position:relative;margin-top:10px;padding-left:39px;}
+.login_form li:first-child{margin-top:0}
+.login_form li.input_li{background:#fff;}
+.login_form .ico_com{position:absolute;top:11px;left:10px}
+.login_form .inp_box{display:block}
+.login_form .i_text{height:auto;padding:0;background:none;border:0;height:25px;padding:10px 0;font-size:14px;color:#666}
+.login_form .lbl{top:13px;left:10px;font-size:14px;color:#aaa;font-weight:normal}
+.login_form .btn_login{border:0;padding-left:0;margin-top:15px}
+.login_form .btn_login button{background:#f13d40;line-height:50px;text-align:center;display:block;width:100%;font-size:16px;color:#fff;font-weight:500;}
+.login_form .inp_box{border:0}
+
+.login_form li.role_li{padding-left:10px; border:0; margin-bottom:15px} /* 20180207 추가 */
+.login_form li.role_li > label{font-family:gulim; color:#dddddd; font-size: 13px; } /* 20180207 추가 */
+.login_form .select{width:100%;height:42px;border:0;}
+.login_form .select label{right:0;height:42px;background:url(../images/select_arr2.png) no-repeat 100% 50%;font-weight:normal;color:#aaa;font-size:14px;line-height:41px;}
+.login_form .select label.chk{color:#666;}
+.login_form .select select{height:42px;width:384px;margin-left:-39px}
+.login_form .select option {line-height: 30px}
+.login_form .checkbox{position:absolute;top:9px;right:8px;}
+
+.login_form .email{padding-left:0;text-align:center;margin:20px 0 2px 0;font-size:14px;color:#333;}
+.login_form .email .ico_com{position:inherit;top:-1px;left:0;margin-right:4px;}
+.login_form .email .email_addr{display:inline-block;padding-left:8px;color:#3b3b3b;text-decoration:underline;cursor:pointer;}
+
+.report_section:after{display:block;clear:both;content:''}
+.report_section article{position:relative}
+.report_section article.tcf{float:left;width:59%}
+.report_section article.rank{overflow:hidden;padding-left:30px}
+.report_section .btn_s{position:absolute;top:0;right:0}
+.report_section table{width:100%}
+.report_list{overflow:hidden;height:254px}
+.report_list .cat{display:inline-block;vertical-align:middle;margin-right:6px;padding:0 8px;-webkit-border-radius:2px;border-radius:2px;padding-top:1px;line-height:23px;color:#fff}
+.report_list .cat.c1{background:#f05050}
+.report_list .cat.c2{background:#4f5f6f}
+.report_list .cat.c3{background:#7e8e9f}
+.report_list li a{display:block;padding:20px 0;border-top:1px solid #f0f0f4}
+.report_list li a:hover{background:#f4f6fa}
+.report_list li a > span{display:inline-block;vertical-align:middle;color:#9c9ea3}
+.report_list li .count{position:relative;text-align:right}
+.report_list li .count strong{font-size:22px}
+.report_list li .count .ico_com{position:absolute;margin:6px 0 0 14px}
+.report_list li .part{padding-left:40px;text-align:left;color:#7e8e9f}
+.report_list li.sum > p{padding:14px 0 13px;border-top:1px solid #f0f0f4}
+.report_list li.sum > p > span{display:inline-block;vertical-align:middle;color:#7e8e9f}
+.report_list li.sum .count strong{font-size:16px}
+.report_tit{margin:12px 0 6px;background:#f9f9fa;border:1px solid #ebebec;box-shadow:2px 2px 5px #e2e4e7}
+.report_tit:after{display:block;clear:both;content:''}
+.report_tit li{float:left;padding:9px 0 8px;font-weight:normal;text-align:right;color:#9c9ea3}
+.report_tit li.part{padding-left:70px;text-align:left}
+.report_tit_v1{padding-right:40px;padding-left:40px}
+.report_tit_v1 li{text-align:center}
+.report_tbl{overflow:hidden;height:244px;padding:10px 40px 0 40px}
+.report_tbl .ico_rank{display:inline-block;width:20px;height:27px;line-height:22px;margin-left:5px;text-align:center;background-image:url("../images/ico_com.png");background-position:-273px 0;color:#fff}
+.report_tbl td{text-align:center;padding-top:25px;padding-bottom:25px;border-top:1px dashed #bec6cf;color:#9c9ea3}
+.report_tbl td strong{font-size:22px}
+.report_tbl td.name{font-weight:bold;font-size:15px;color:#8a98a8}
+.report_tbl td.rank{font-weight:bold;font-size:15px;color:#8a98a8}
+.report_tbl td.count strong{color:#7e8e9f}
+.report_tbl tr.first td{border-top:0 !important}
+.report_tbl tr.r1 .rank{color:#f05050}
+.report_tbl tr.r1 .ico_rank{background-position:-248px 0}
+.report_tbl tr.r1 .name{color:#4f5f6f}
+.report_tbl tr.r1 .count strong{color:#f05050}
+.report_chart article{position:relative;height:418px;margin-top:15px}
+.report_chart .nav{padding-top:45px;text-align:center}
+.report_chart .nav strong{display:inline-block;width:220px;font-size:20px;color:#213141}
+.report_chart .nav a{display:inline-block;vertical-align:middle;margin-top:-5px;padding:5px}
+.report_chart ul.cat{position:absolute;top:43px;right:88px}
+.report_chart ul.cat li{float:left;margin-left:2px}
+.report_chart ul.cat a{display:inline-block;line-height:20px;padding-top:1px;width:41px;text-align:center;border-radius:3px;-webkit-border-radius:3px;border:1px solid #b8bdc6;color:#7e8e9f}
+.report_chart ul.cat a.selected{background:#f05050;border-color:#f05050;font-weight:bold;color:#fff}
+.report_chart ul.cat .ico_cal{margin-top:-2px}
+.report_chart .chart{margin-top:40px;text-align:center}
+.report_chart .chart *{font-family:Roboto,verdana,Dotum,Gulim,Sans-serif;font-size:12px}
+
+.graph{width:100%;min-height:220px;background:#f4f4f4;margin-bottom:20px;}
+
+
+

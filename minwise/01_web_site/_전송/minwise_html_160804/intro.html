@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>:::민앤지:::</title>
+<link href="css/content_css.css" rel="stylesheet" type="text/css" />
+<link href="css/base.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<div id="wrap">
+<!-- Top -->
+<div id="header_wrap">
+          <div id="header">
+                <h1 class="h1"><a href="main.html"><img src="images/logo.gif" alt="민앤지로고" /></a></h1>
+                <div class="top_menu">
+                        <a href="main.html">Home</a><img class="line" src="images/top_line.gif" alt="구분선" />
+                        <a href="sitemap.html">Sitemap</a><img class="line" src="images/top_line.gif" alt="구분선" />
+                        <a href="location.html">Contact us</a>
+                </div>
+                <div class="gnb">
+                    <ul>
+                        <li><a href="intro.html"><img src="images/menu_01.gif" alt="회사소개" /></a></li>
+                        <li><a href="pns.html"><img src="images/menu_02.gif" alt="사업분야" /></a></li>
+                        <li><a href="patent01.html"><img src="images/menu_03.gif" alt="특허&인증" /></a></li>
+                        <li><a href="news.html"><img src="images/menu_04.gif" alt="홍보센터" /></a></li>
+                        <li><a href="person.html"><img src="images/menu_05.gif" alt="인재채용" /></a></li>
+                    </ul>
+                </div>
+          </div>
+</div>
+<!--// Top -->
+
+<!-- Container -->
+<div id="container_sub_wrap">
+   <div id="container_sub">
+            <!-- lnb -->
+            	<div id="left">
+                	<div>
+                    	<h2 ><a href="intro.html" target="_blank"><img src="images/lnb_title_img01.gif" alt="회사소개" /></a></h2>
+                            <ul class="sub_menu">
+                              <li class="on"><a href="intro.html">기업소개</a></li>
+                              <li><a href="ceo.html">CEO 인사말</a></li>
+                              <li><a href="history.html">연혁 및 실적</a></li>
+                              <li><a href="group.html">조직도</a></li>
+                              <li><a href="partner.html">제휴업체</a></li>
+                              <li><a href="location.html">오시는길</a></li>
+                            </ul>
+                    </div>
+				</div>
+            <!-- 컨텐츠 -->
+				  <div id="sub_contents">
+                        <div class="location fr">
+                        <img src="images/location_home.gif" alt="홈"/><a href="intro.html">회사소개</a><img src="images/location_arrow.gif" /><a href="intro.html"><span class="c_orange txt_b">기업소개</span></a></div>
+                        <h3><img src="images/title01_company.gif" alt="기업소개" /></h3>
+        					  <p class="mt35">주식회사 민앤지는 2009년  3월  설립 이래 개인정보 보안사업 영역에서 고객의 요구에 최적화된 개인정보보안 서비스를 개발, <br />
+       					      제공하고  있습니다.</p>
+                              <p><strong>SK텔레콤, KT 및  LGU+  등과  제휴계약을 통해</strong> &lsquo;휴대폰번호  도용방지서비스&rsquo;와  &lsquo;로그인  플러스 서비스&rsquo;를  제공하고 있으며,  <br />
+                              많은  사람들이 개인정보 도용의 위험에서 보호받고 있습니다. 더욱 안전하고 편리한 인터넷 및 모바일  환경을 제공하기 위해 고객의 필요와 <br />
+                              요구에 누구보다 먼저 귀를 기울입니다. 더  편리하고,  더  안전한 서비스를 제공하기 위해 최선을 다하겠습니다.<br />
+	      </p>
+<p class="mt60"><img src="images/intro_t.gif" alt="회사명민앤지" /></p>
+                  
+          	   	 </div>
+            <!-- //컨텐츠-->
+    </div>
+</div>
+<!--// Container -->
+<!-- Footer -->
+<div id="footer">
+    <div class="adress">
+        		<div class="f_img"><img src="images/footer_img.gif" alt="서울 서초구 강남대로 483 청호빌딩 6층 민앤지" /></div>
+                	<div class="familysite">
+                        <p class="selTxt"><a id="familysite">FAMILY SITE</a></p>
+                            <div id="family">
+                                <ul>
+                                    <li><a target="_blank" href="http://www.minwise.co.kr">(주)민앤지</a></li>
+                                    <li><a target="_blank" href="http://www.loginplus.co.kr">로그인플러스</a></li>
+                                    <li><a target="_blank" href="http://ipns.kr">휴대폰번호도용방지서비스</a></li>
+                                 </ul>
+                             </div>
+   					</div>
+			    </div>
+	</div>
+</div>
+<script type="text/javascript">
+<!--
+$("document").ready(function() {
+	$("#family").hide();	
+	$("#familysite").bind({
+		click:function(event) {
+			if ($("#family").is(":visible")) {
+				$("#family").hide();
+				
+			} else {
+				var position = $("#familysite").position();
+				var height = $("#familysite").height();
+				$("#family").css({'top':position.top - 66 - (12 * 2) + (height * 2), 'left':position.left});
+				$("#family").show();
+			}
+		},
+		
+		mouseover:function(event) {
+			$(this).addClass("over");
+		},
+		 
+		mouseout:function(event) {
+			$(this).removeClass("over");
+		}
+	});	
+
+	$("#main_agree2").click(function() {
+		var opts = {
+				"url" : "agree1.jsp",
+				"width" : "747px",
+				"height" : "685px",
+				"left" : "100px",
+				"top" : "300px",
+				"center" : false };
+		$.popup(opts);
+	});
+  
+	$("#main_agree3").click(function() {
+		var opts = {
+				"url" : "info_personal.jsp",
+				"width" : "747px",
+				"height" : "685px",
+				"left" : "100px",
+				"top" : "300px",
+				"center" : false };
+		$.popup(opts);
+	});	
+});
+//-->
+</script>
+<!--// Footer -->
+</div>
+</body>
+</html>

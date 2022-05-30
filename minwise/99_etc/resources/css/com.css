@@ -1,0 +1,43 @@
+@charset "utf-8";
+@import url(http://cdn.rawgit.com/hiun/NanumSquare/master/nanumsquare.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+/* Reset */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,textarea,p,blockquote,th,td,p,iframe,em { margin:0; padding:0;font-size:inherit; }
+body { font-family:'Nanum Square', 'Nanum Gothic', '돋음',Dotum,Arial,Helvetica,sans-serif; font-size:14px; font-style:normal; color:#333; line-height:1.4; -webkit-text-size-adjust:none; -webkit-appearance:none;}
+.lang-cn {font-family:'Nanum Square', 'Nanum Gothic', '돋음', Dotum, Arial, Helvetica, sans-serif;}
+header, hgroup, footer, section, article, aside, nav, canvas, figure, figcaption { display:block; }
+table { font-size:inherit; border-collapse:separate; *border-collapse:collapse; border-spacing:0; table-layout:fixed; }
+th, td { word-wrap:break-word; word-break:break-all; }
+fieldset, iframe { border:0; vertical-align:top; }
+small { font-size:11px; }
+img { border:0; line-height:0; font-size:0; vertical-align:top; }
+address,cite,code,dfn,em,var,th { font-style:normal; font-weight:normal; }
+li, dd { list-style:none; word-break:keep-all; word-break:break-word; }
+q:before,q:after { content:''; }
+hr { display:none; }
+caption { overflow:hidden;width:100%;height:1px;font-size:0;line-height:0;text-indent:-9999px; *text-indent:0; *color:transparent; letter-spacing:-100px; margin-top:-1px; }
+legend { display:block; position:absolute; left:-9999px; text-indent:9999px; width:0; height:0; overflow:hidden; font-size:0; line-height:0; white-space:nowrap; color:#333; }
+button { padding:0; border:0; cursor:pointer; background:none; vertical-align:middle; font-family:'Nanum Square', 'Nanum Gothic', '돋음',Dotum,Arial,Helvetica,sans-serif; font-size:14px; color:#333; }
+h1, h2, h3, h4, h5, h6 { font-weight:normal; }
+a, a code{color:inherit; *color:#333; text-decoration:none; }
+sup,sub{font-size:0.9em; color:#2460ce; }
+select{font-family:'Nanum Square', 'Nanum Gothic', '돋음',Dotum,Arial,Helvetica,sans-serif; font-size:14px; line-height:27px; padding:3px 2px 3px 3px; vertical-align:middle; border:solid 1px #ddd; }
+html.ie.v8 select{ padding:2px 2px 2px 3px; }
+html.safari select{ line-height:22px; }
+a:hover{color:#333; text-decoration:none;}
+
+#wrap .tbl_g{width:1200px; margin:20px auto 0; }
+#wrap h1{text-align: center; font-size: 20px; font-weight:bold; padding-bottom:20px; }
+#wrap table{text-align:center; border:1px solid #333;}
+#wrap table th{border-right:1px solid #333; border-bottom:1px solid #333; background:#6b6b6b; color:#fff; padding:8px 0; }
+#wrap table .td_bl{font-weight:bold; font-size:16px; background:#cfcfcf;}
+#wrap table .td_rt{border-right:1px solid #333;}
+#wrap table .td_rt_n{border-right:none;}
+#wrap table .td_bt_n{border-bottom:none;}
+#wrap table .td_bt{border-bottom:1px solid #333;}
+#wrap table tbody tr td{border-right:1px solid #333; border-bottom:1px solid #333;}
+#wrap table tbody tr .td_l{text-align:left; line-height:21px;  padding-left:10px; padding-right:10px; }
+#wrap table tbody tr .td_f{font-size:12px; padding-top:10px; padding-bottom:10px; line-height:22px; }
+#wrap table tbody tr .td_f2{font-size:11px;}
+#wrap table tbody tr .td_f3{padding:10px; font-size:13px;}
