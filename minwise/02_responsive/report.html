@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -9,8 +10,10 @@
     <script src="./resources/js/hec_design.js"></script>
     <title>Hecto</title>
 </head>
+
 <body>
-    <div id="wrap" class="report">
+    <!-- 2022.06.16 수정 - .responsive-wrap 추가 -->
+    <div id="wrap" class="report responsive-wrap">
         <div class="bg">
             <header id="header" class="subHeader">
                 <div class="headTop">
@@ -61,7 +64,8 @@
                             </div>
                             <div class="ipBox file">
                                 <div class="fileInfo">
-                                    <input type="text" class="fileName" placeholder="+ 첨부파일선택 (첨부파일 용량 : 최대 100Mb)" readonly>
+                                    <!-- 2022.06.16 수정 - placeholder 수정 -->
+                                    <input type="text" class="fileName" placeholder="첨부파일 용량 : 최대 100Mb" readonly>
                                     <button type="button" class="delBtn hide">첨부파일삭제</button>
                                 </div>
                                 <label for="upload">파일첨부</label>
@@ -81,7 +85,8 @@
                             </div>
                         </fieldset>
                     </form>
-                </section><!--실명제보-->
+                </section>
+                <!--실명제보-->
                 <section id="tab-2" class="tabCont">
                     <form>
                         <fieldset>
@@ -95,7 +100,8 @@
                             </div>
                             <div class="ipBox file">
                                 <div class="fileInfo">
-                                    <input type="text" class="fileName" placeholder="+ 첨부파일선택 (첨부파일 용량 : 최대 100Mb)" readonly>
+                                    <!-- 2022.06.16 수정 - placeholder 수정 -->
+                                    <input type="text" class="fileName" placeholder="첨부파일 용량 : 최대 100Mb" readonly>
                                     <button type="button" class="delBtn hide">첨부파일삭제</button>
                                 </div>
                                 <label for="upload2">파일첨부</label>
@@ -103,19 +109,22 @@
                             </div>
                         </fieldset>
                     </form>
-                </section><!--익명제보-->
+                </section>
+                <!--익명제보-->
             </div>
             <div class="btnWrap">
-                <a href="#n" class="reportBtn"><span>제보하기</span></a>
+                <!-- 2022.06.16 수정 - .repBtn -->
+                <a href="#n" class="repBtn"><span>제보하기</span></a>
             </div>
         </section>
         <footer id="footer">
             <div class="footWrap">
                 <span class="dt">TEL</span>02-6454-0413<span class="dt">E-mail</span><a href="mailto:bk100@hecto.co.kr">bk100@hecto.co.kr</a>
-                <p>서울특별시 강남구 테헤란로 34길 6 태광타워 13층, Hecto 경영진단팀</p>
+                <!-- 2022.06.16 수정 - .br-m 추가 -->
+                <p>서울특별시 강남구 테헤란로 34길 6 태광타워 13층,<span class="br-m"></span> Hecto 경영진단팀</p>
             </div>
         </footer>
-        
     </div>
 </body>
+
 </html>
