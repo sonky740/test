@@ -12,6 +12,10 @@ body {
   align-items: center;
 }
 
+.canvas-wrap button {
+  margin-top: 20px;
+}
+
 #clock {
   background-color: #333;
 }

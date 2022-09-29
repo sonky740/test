@@ -15,14 +15,6 @@ const myGameArea = {
     this.frameNo = 0;
     this.interval = setInterval(updateGameArea, 20);
     this.keys = [];
-
-    // key event
-    window.addEventListener('keydown', (e) => {
-      this.keys[e.code] = true;
-    });
-    window.addEventListener('keyup', (e) => {
-      this.keys[e.code] = false;
-    });
   },
   clear() {
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
@@ -112,6 +104,30 @@ function everyinterval(n) {
   return false;
 }
 
+function keyboardEvent() {
+  window.addEventListener('keydown', (e) => {
+    myGameArea.keys[e.code] = true;
+  });
+  window.addEventListener('keyup', (e) => {
+    myGameArea.keys[e.code] = false;
+  });
+
+  myGamePiece.speedX = 0;
+  myGamePiece.speedY = 0;
+  if (myGameArea.keys && myGameArea.keys['ArrowLeft']) {
+    myGamePiece.speedX = -1.2;
+  }
+  if (myGameArea.keys && myGameArea.keys['ArrowRight']) {
+    myGamePiece.speedX = 1;
+  }
+  if (myGameArea.keys && myGameArea.keys['ArrowUp']) {
+    myGamePiece.speedY = -1;
+  }
+  if (myGameArea.keys && myGameArea.keys['ArrowDown']) {
+    myGamePiece.speedY = 1;
+  }
+}
+
 function updateGameArea() {
   let x, height, gap, minHeight, maxHeight, minGap, maxGap;
   for (let i = 0; i < myObstacles.length; i++) {
@@ -142,20 +158,7 @@ function updateGameArea() {
     myObstacles[i].update();
   }
   myObstacles.x += -1;
-  myGamePiece.speedX = 0;
-  myGamePiece.speedY = 0;
-  if (myGameArea.keys && myGameArea.keys['ArrowLeft']) {
-    myGamePiece.speedX = -1;
-  }
-  if (myGameArea.keys && myGameArea.keys['ArrowRight']) {
-    myGamePiece.speedX = 1;
-  }
-  if (myGameArea.keys && myGameArea.keys['ArrowUp']) {
-    myGamePiece.speedY = -1;
-  }
-  if (myGameArea.keys && myGameArea.keys['ArrowDown']) {
-    myGamePiece.speedY = 1;
-  }
+  keyboardEvent();
   myGamePiece.newPos();
   myGamePiece.update();
 
