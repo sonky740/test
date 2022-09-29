@@ -9,7 +9,36 @@
   </head>
 
   <body>
-    <div id="gameWrap" class="canvas-wrap"></div>
+    <div id="gameWrap" class="canvas-wrap">
+      <button
+        onmousedown="myGamePiece.moveup()"
+        onmouseup="myGamePiece.stopMove()"
+        ontouchstart="myGamePiece.moveup()"
+      >
+        UP
+      </button>
+      <button
+        onmousedown="myGamePiece.movedown()"
+        onmouseup="myGamePiece.stopMove()"
+        ontouchstart="myGamePiece.movedown()"
+      >
+        DOWN
+      </button>
+      <button
+        onmousedown="myGamePiece.moveleft()"
+        onmouseup="myGamePiece.stopMove()"
+        ontouchstart="myGamePiece.moveleft()"
+      >
+        LEFT
+      </button>
+      <button
+        onmousedown="myGamePiece.moveright()"
+        onmouseup="myGamePiece.stopMove()"
+        ontouchstart="myGamePiece.moveright()"
+      >
+        RIGHT
+      </button>
+    </div>
 
     <script src="./js/game.js"></script>
   </body>
