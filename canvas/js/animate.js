@@ -37,7 +37,7 @@ class Circle {
 
   draw() {
     ctx.beginPath();
-    ctx.arc(this.x, this.y, this.radius, 0, 360);
+    ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
     ctx.strokeStyle = '#000';
     ctx.stroke();
     ctx.fillStyle = this.color;

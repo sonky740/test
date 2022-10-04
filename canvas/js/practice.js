@@ -25,7 +25,7 @@ grdCircle.addColorStop(1, '#fff');
 
 // 원
 ctx.beginPath();
-ctx.arc(100, 100, 100, 0, 360);
+ctx.arc(100, 100, 100, 0, 2 * Math.PI);
 ctx.fillStyle = grdCircle;
 ctx.fill();
 
