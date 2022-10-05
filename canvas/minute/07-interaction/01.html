@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Canvas</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      canvas {
+        width: 600px;
+        height: 400px;
+        background: #eee;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Interaction</h1>
+    <canvas class="canvas" width="1200" height="800"></canvas>
+
+    <script>
+      const canvas = document.querySelector('.canvas');
+      const context = canvas.getContext('2d');
+      let x = 400;
+      let y = 400;
+
+      context.fillRect(x, y, x / 2, y / 2);
+
+      function clickHandler(e) {
+        const offsetX = e.offsetX;
+        const offsetY = e.offsetY;
+
+        // 2배수여도 좌표값은 변하지 않음.
+        if (offsetX > 200 && offsetX < 300 && offsetY > 200 && offsetY < 300) {
+          console.log('here!');
+        }
+      }
+
+      canvas.addEventListener('click', clickHandler);
+    </script>
+  </body>
+</html>

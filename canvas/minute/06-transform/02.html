@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Canvas</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      .canvas {
+        background: #eee;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Transform</h1>
+    <canvas class="canvas" width="500" height="500"></canvas>
+
+    <script>
+      const canvas = document.querySelector('.canvas');
+      const context = canvas.getContext('2d');
+      let scaleValue = 1;
+      let rotationValue = 0;
+      let count = 0;
+
+      function toRadian(d) {
+        return (d * Math.PI) / 180;
+      }
+
+      function draw() {
+        if (count % 1 === 0) {
+          // context.clearRect(0, 0, canvas.width, canvas.height);
+          context.save();
+          context.setTransform(1, 0, 0, 1, 0, 0); // = context.resetTransform(); 현재 변형 상태를 단위 행렬로 재설정.
+          context.translate(250, 250);
+          context.scale(scaleValue, scaleValue);
+          context.rotate(toRadian(rotationValue));
+          context.strokeRect(-50, -50, 100, 100);
+          context.restore();
+
+          context.fillRect(10, 10, 30, 30);
+
+          scaleValue += 0.05;
+          rotationValue += 1;
+        }
+
+        count++;
+        requestAnimationFrame(draw);
+      }
+
+      draw();
+    </script>
+  </body>
+</html>
