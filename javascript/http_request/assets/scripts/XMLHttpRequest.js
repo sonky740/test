@@ -4,16 +4,30 @@ const form = document.querySelector('#new-post form');
 const fetchButton = document.querySelector('#available-posts button');
 const postList = document.querySelector('ul');
 
-async function sendHttpRequest(method, url, data) {
-  const response = await fetch(url, {
-    method: method,
-    body: JSON.stringify(data),
-    headers: data ? { 'Content-Type': 'application/json' } : {},
+function sendHttpRequest(method, url, data) {
+  const promise = new Promise((resolve, reject) => {
+    const xhr = new XMLHttpRequest();
+    xhr.open(method, url);
+
+    xhr.responseType = 'json';
+
+    xhr.onload = function () {
+      if (xhr.status >= 200 && xhr.status < 300) {
+        resolve(xhr.response);
+      } else {
+        reject(new Error('Something went wrong!'));
+      }
+    };
+
+    // 네트워크 오류 = 요청을 전송하지 못했거나, 요청 시간을 초과했을 경우에 발생
+    xhr.onerror = function () {
+      reject(new Error('Failed to send request!'));
+    };
+
+    xhr.send(JSON.stringify(data));
   });
 
-  if (response.status !== 200) return new Error('Something went wrong!');
-
-  return response.json();
+  return promise;
 }
 
 async function fetchPosts() {
