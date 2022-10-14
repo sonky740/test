@@ -5,15 +5,21 @@ const fetchButton = document.querySelector('#available-posts button');
 const postList = document.querySelector('ul');
 
 async function sendHttpRequest(method, url, data) {
-  const response = await fetch(url, {
-    method: method,
-    body: JSON.stringify(data),
-    headers: data ? { 'Content-Type': 'application/json' } : {},
-  });
-
-  if (response.status !== 200) return new Error('Something went wrong!');
-
-  return response.json();
+  try {
+    const response = await fetch(url, {
+      method: method,
+      body: data,
+      // body: JSON.stringify(data),
+      // headers: data ? { 'Content-Type': 'application/json' } : {},
+    });
+    if (response.status >= 200 && response.status < 300) {
+      return response.json();
+    } else {
+      throw new Error('Something went wrong! - server side');
+    }
+  } catch (error) {
+    throw new Error('Something went wrong!');
+  }
 }
 
 async function fetchPosts() {
@@ -44,6 +50,11 @@ async function createPost(title, content) {
     body: content,
     userId: userId,
   };
+
+  const fd = new FormData(form);
+  // fd.append('title', title);
+  // fd.append('body', content);
+  fd.append('userId', userId);
 
   sendHttpRequest('POST', 'https://jsonplaceholder.typicode.com/posts', post);
 }
