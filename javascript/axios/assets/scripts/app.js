@@ -4,32 +4,13 @@ const form = document.querySelector('#new-post form');
 const fetchButton = document.querySelector('#available-posts button');
 const postList = document.querySelector('ul');
 
-async function sendHttpRequest(method, url, data) {
-  try {
-    const response = await fetch(url, {
-      method: method,
-      body: data,
-      // body: JSON.stringify(data),
-      headers: data ? { 'Content-Type': 'application/json' } : {},
-    });
-    if (response.status >= 200 && response.status < 300) {
-      return response.json();
-    } else {
-      throw new Error('Something went wrong! - server side');
-    }
-  } catch (error) {
-    throw new Error('Something went wrong!');
-  }
-}
-
 async function fetchPosts() {
   try {
-    const responseData = await sendHttpRequest(
-      'GET',
+    const response = await axios.get(
       'https://jsonplaceholder.typicode.com/posts'
     );
 
-    const listOfPosts = responseData;
+    const listOfPosts = response.data;
 
     for (const post of listOfPosts) {
       const postEl = document.importNode(postTemplate.content, true);
@@ -39,7 +20,7 @@ async function fetchPosts() {
       listElement.append(postEl);
     }
   } catch (error) {
-    alert(error.message);
+    console.error(error.response);
   }
 }
 
@@ -56,7 +37,12 @@ async function createPost(title, content) {
   // fd.append('body', content);
   fd.append('userId', userId);
 
-  sendHttpRequest('POST', 'https://jsonplaceholder.typicode.com/posts', post);
+  // axios에서는 headers를 생략해도 자동으로 설정해준다.
+  const response = await axios.post(
+    'https://jsonplaceholder.typicode.com/posts',
+    post
+  );
+  console.log(response);
 }
 
 fetchButton.addEventListener('click', () => {
@@ -69,14 +55,11 @@ form.addEventListener('submit', (e) => {
   createPost(enteredTitle, enteredContent);
 });
 
-postList.addEventListener('click', (e) => {
+postList.addEventListener('click', async (e) => {
   if (e.target.tagName === 'BUTTON') {
     const post = e.target.closest('li');
     const postId = post.id;
-    sendHttpRequest(
-      'DELETE',
-      `https://jsonplaceholder.typicode.com/posts/${postId}`
-    );
+    await axios.delete(`https://jsonplaceholder.typicode.com/posts/${postId}`);
     post.remove();
   }
 });

@@ -4,22 +4,30 @@ const form = document.querySelector('#new-post form');
 const fetchButton = document.querySelector('#available-posts button');
 const postList = document.querySelector('ul');
 
-async function sendHttpRequest(method, url, data) {
-  try {
-    const response = await fetch(url, {
-      method: method,
-      body: data,
-      // body: JSON.stringify(data),
-      headers: data ? { 'Content-Type': 'application/json' } : {},
-    });
-    if (response.status >= 200 && response.status < 300) {
-      return response.json();
-    } else {
-      throw new Error('Something went wrong! - server side');
-    }
-  } catch (error) {
-    throw new Error('Something went wrong!');
-  }
+function sendHttpRequest(method, url, data) {
+  const promise = new Promise((resolve, reject) => {
+    const xhr = new XMLHttpRequest();
+    xhr.open(method, url);
+
+    xhr.responseType = 'json';
+
+    xhr.onload = function () {
+      if (xhr.status >= 200 && xhr.status < 300) {
+        resolve(xhr.response);
+      } else {
+        reject(new Error('Something went wrong!'));
+      }
+    };
+
+    // 네트워크 오류 = 요청을 전송하지 못했거나, 요청 시간을 초과했을 경우에 발생
+    xhr.onerror = function () {
+      reject(new Error('Failed to send request!'));
+    };
+
+    xhr.send(JSON.stringify(data));
+  });
+
+  return promise;
 }
 
 async function fetchPosts() {
@@ -50,11 +58,6 @@ async function createPost(title, content) {
     body: content,
     userId: userId,
   };
-
-  const fd = new FormData(form);
-  // fd.append('title', title);
-  // fd.append('body', content);
-  fd.append('userId', userId);
 
   sendHttpRequest('POST', 'https://jsonplaceholder.typicode.com/posts', post);
 }
