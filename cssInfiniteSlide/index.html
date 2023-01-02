@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slide</title>
+    <style>
+      .slider {
+        position: relative;
+        margin: auto;
+        max-width: 960px;
+        height: 100px;
+        overflow: hidden;
+
+        --slide-width: 100px;
+        --slide-number: 7;
+        --slide-repeat: 3;
+      }
+
+      .animation {
+        display: flex;
+        height: 100%;
+        width: calc(
+          var(--slide-width) * var(--slide-number) * var(--slide-repeat)
+        );
+        animation: slide 5s linear infinite;
+      }
+
+      .slide {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: var(--slide-width);
+        height: 100%;
+        font-size: 20px;
+      }
+
+      .red {
+        background: red;
+      }
+
+      .blue {
+        background: blue;
+      }
+
+      .green {
+        background: green;
+      }
+
+      .yellow {
+        background: yellow;
+      }
+
+      .orange {
+        background: orange;
+      }
+
+      .pink {
+        background: pink;
+      }
+
+      .purple {
+        background: purple;
+      }
+
+      .absolute {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: var(--slide-width);
+        background: linear-gradient(
+          to right,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 1) 100%
+        );
+      }
+
+      .left {
+        left: 0;
+        background: linear-gradient(
+          to left,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 1) 100%
+        );
+      }
+
+      .right {
+        right: 0;
+      }
+
+      @keyframes slide {
+        0% {
+          transform: translate3d(0, 0, 0);
+        }
+        100% {
+          transform: translate3d(
+            calc(var(--slide-width) * var(--slide-number) * -1),
+            0,
+            0
+          );
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slider">
+      <div class="animation">
+        <div class="slide red">1</div>
+        <div class="slide blue">2</div>
+        <div class="slide green">3</div>
+        <div class="slide yellow">4</div>
+        <div class="slide orange">5</div>
+        <div class="slide pink">6</div>
+        <div class="slide purple">7</div>
+        <div class="slide red">1</div>
+        <div class="slide blue">2</div>
+        <div class="slide green">3</div>
+        <div class="slide yellow">4</div>
+        <div class="slide orange">5</div>
+        <div class="slide pink">6</div>
+        <div class="slide purple">7</div>
+        <div class="slide red">1</div>
+        <div class="slide blue">2</div>
+        <div class="slide green">3</div>
+        <div class="slide yellow">4</div>
+        <div class="slide orange">5</div>
+        <div class="slide pink">6</div>
+        <div class="slide purple">7</div>
+      </div>
+      <div class="absolute left"></div>
+      <div class="absolute right"></div>
+    </div>
+  </body>
+</html>
