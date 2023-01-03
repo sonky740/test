@@ -4,108 +4,30 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./slide.css" />
     <title>Slide</title>
-    <style>
-      .slider {
-        position: relative;
-        margin: auto;
-        max-width: 960px;
-        height: 100px;
-        overflow: hidden;
-
-        --slide-width: 100px;
-        --slide-number: 7;
-        --slide-repeat: 3;
-      }
-
-      .animation {
-        display: flex;
-        height: 100%;
-        width: calc(
-          var(--slide-width) * var(--slide-number) * var(--slide-repeat)
-        );
-        animation: slide 5s linear infinite;
-      }
-
-      .slide {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: var(--slide-width);
-        height: 100%;
-        font-size: 20px;
-      }
-
-      .red {
-        background: red;
-      }
-
-      .blue {
-        background: blue;
-      }
-
-      .green {
-        background: green;
-      }
-
-      .yellow {
-        background: yellow;
-      }
-
-      .orange {
-        background: orange;
-      }
-
-      .pink {
-        background: pink;
-      }
-
-      .purple {
-        background: purple;
-      }
-
-      .absolute {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        width: var(--slide-width);
-        background: linear-gradient(
-          to right,
-          rgba(255, 255, 255, 0) 0%,
-          rgba(255, 255, 255, 1) 100%
-        );
-      }
-
-      .left {
-        left: 0;
-        background: linear-gradient(
-          to left,
-          rgba(255, 255, 255, 0) 0%,
-          rgba(255, 255, 255, 1) 100%
-        );
-      }
-
-      .right {
-        right: 0;
-      }
-
-      @keyframes slide {
-        0% {
-          transform: translate3d(0, 0, 0);
-        }
-        100% {
-          transform: translate3d(
-            calc(var(--slide-width) * var(--slide-number) * -1),
-            0,
-            0
-          );
-        }
-      }
-    </style>
   </head>
   <body>
+    <p>css로 무한 슬라이드 만드는 조건</p>
+    <ul>
+      <li>
+        slide 반복횟수를 2로 하면 .slider(제일 바깥)의 width가
+        .animation(애니메이션을 위한 요소)의 width / 2보다 작아야 위화감 없이
+        보임
+      </li>
+      <li>
+        slide 반복횟수를 3으로하면 .slider의 width가 .animation의 width * (2 /
+        3)보다 작아야 위화감 없이 보임
+      </li>
+      <li>
+        keyframes animation은 transform을 slide요소의 width * 갯수의
+        (-)만큼 움직여야함.<br />
+        만약 거꾸로 돌리고싶으면 reverse를 쓸 것.
+      </li>
+    </ul>
     <div class="slider">
       <div class="animation">
+        <!-- 1 -->
         <div class="slide red">1</div>
         <div class="slide blue">2</div>
         <div class="slide green">3</div>
@@ -113,6 +35,7 @@
         <div class="slide orange">5</div>
         <div class="slide pink">6</div>
         <div class="slide purple">7</div>
+        <!-- 2 -->
         <div class="slide red">1</div>
         <div class="slide blue">2</div>
         <div class="slide green">3</div>
@@ -120,16 +43,17 @@
         <div class="slide orange">5</div>
         <div class="slide pink">6</div>
         <div class="slide purple">7</div>
-        <div class="slide red">1</div>
+        <!-- 3 -->
+        <!-- <div class="slide red">1</div>
         <div class="slide blue">2</div>
         <div class="slide green">3</div>
         <div class="slide yellow">4</div>
         <div class="slide orange">5</div>
         <div class="slide pink">6</div>
-        <div class="slide purple">7</div>
+        <div class="slide purple">7</div> -->
       </div>
-      <div class="absolute left"></div>
-      <div class="absolute right"></div>
+      <div class="shadow left"></div>
+      <div class="shadow right"></div>
     </div>
   </body>
 </html>
