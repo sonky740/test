@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #carousel {
+        /* perspective: 600px; 3개 */
+        /* perspective: 1600px; 4개 */
+        perspective: 1800px;
+        position: relative;
+        margin: 100px auto;
+        width: 400px;
+        height: 200px;
+      }
+
+      .item {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background: gray;
+        opacity: 0.5;
+        transform-style: preserve-3d;
+        transition: transform 1s;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="carousel">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+    </div>
+    <button type="button" id="prev">Prev</button>
+    <button type="button" id="next">Next</button>
+
+    <script>
+      const carousel = document.querySelector('#carousel');
+      const items = document.querySelectorAll('.item');
+      const prevButton = document.querySelector('#prev');
+      const nextButton = document.querySelector('#next');
+
+      let currentItem = 0;
+      const ITEM_COUNT = items.length;
+      const ROTATION_ANGLE = 360 / ITEM_COUNT;
+
+      function rotateCarousel() {
+        for (let i = 0; i < ITEM_COUNT; i++) {
+          if (i === currentItem) {
+            items[i].style.zIndex = 1;
+            items[i].style.opacity = 1;
+          } else {
+            items[i].style.zIndex = 0;
+            items[i].style.opacity = 0.5;
+          }
+
+          items[i].style.transform = `rotateY(${
+            i * ROTATION_ANGLE - ROTATION_ANGLE * currentItem
+          }deg) translate3d(${ROTATION_ANGLE / 4}px, 0, 250px)`;
+        }
+      }
+
+      prevButton.addEventListener('click', () => {
+        currentItem--;
+        currentItem = (ITEM_COUNT + currentItem) % ITEM_COUNT;
+        rotateCarousel();
+      });
+
+      nextButton.addEventListener('click', () => {
+        currentItem++;
+        currentItem = (ITEM_COUNT + currentItem) % ITEM_COUNT;
+        rotateCarousel();
+      });
+
+      rotateCarousel();
+    </script>
+  </body>
+</html>
